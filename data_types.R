@@ -19,7 +19,7 @@ class(titanic$pclass) #integer
 titanic$pclass <- as.ordered(titanic$pclass)
 
 
-#Dates
+      ##Dates
 library(lubridate)
 
 dates <- c('2012.01.06', '2012.05.01',
