@@ -57,3 +57,17 @@ names(titanic) <- c("surv", "class", "name","sex", "age", "sib",
                     "par", "ticket","fare", "cabin", "embarked")
 names(titanic)
 
+#combining R objects
+          #row bind:
+titanic_male <- titanic[titanic$sex=='male',]
+titanic_female <- titanic[titanic$sex != 'male',]
+
+titanic_combined <- rbind(titanic_male,titanic_female)
+
+          #column bind:
+titanic_lite <- titanic[,c(1,2,3)]
+titanic_lite2 <- titanic[,-c(1,2,3)]
+names(titanic_lite)
+names(titanic_lite2)
+
+titanic_combined2 <- cbind(titanic_lite,titanic_lite2)
