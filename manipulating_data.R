@@ -57,6 +57,9 @@ names(titanic) <- c("surv", "class", "name","sex", "age", "sib",
                     "par", "ticket","fare", "cabin", "embarked")
 names(titanic)
 
+#renaming just one variable
+names(titanic)[2] <- "CLASS"
+names(titanic)
 
 #combining R objects
 ?rbind
@@ -83,3 +86,4 @@ head(fare_sort)
 ?order
 titanic_sort <- titanic[order(titanic$fare, decreasing=TRUE),]
 head(titanic_sort)
+
