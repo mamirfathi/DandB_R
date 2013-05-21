@@ -25,6 +25,13 @@ gsub('r','R',titanic$comb[1])
 ?substring
 substring(titanic$comb[1], 1, 4)
 
+#string split
+?strsplit
+titanic$last <- strsplit(titanic$name, ',', fixed=TRUE)
+titanic$last[1]
+titanic$last <- lapply(titanic$last, function(x) x[[1]]) 
+titanic$last[1]
+
 #character padding
 ?formatC
 ?sprintf
