@@ -4,8 +4,35 @@
 
 titanic <- read.csv(file="titanic.csv", header=T, as.is=T) 
 
+      ##Character Strings
 
-      ##Factors
+#combine character strings
+?paste
+titanic$comb <- paste(titanic$name,titanic$sex, sep='/')
+titanic$comb[1:10]
+
+#number of characters in a string
+?nchar
+titanic$comb[1]
+nchar(titanic$comb)[1]
+
+#replace characters in a string
+?sub
+sub('r','R',titanic$comb[1])
+gsub('r','R',titanic$comb[1])
+
+#substring
+?substring
+substring(titanic$comb[1], 1, 4)
+
+#character padding
+?formatC
+?sprintf
+DUNS <- 123456
+formatC(DUNS, width = 9, format = "d", flag = "0") 
+sprintf("%09d",DUNS)        
+
+        ##Factors
 
 #converts the character vector into a factor
 class(titanic$sex) #character
