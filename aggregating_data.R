@@ -44,3 +44,23 @@ ddply(titanic, .(sex,pclass),summarize,
       sd = sd(age, na.rm = TRUE),
       max = max(age, na.rm=TRUE),
       iqr = IQR(age,na.rm=TRUE))
+
+#user defined functions:
+check.NA <- function(x){
+  sum(is.na(x))
+}
+
+
+##apply
+?apply
+apply(titanic,1,check.NA) #rows
+apply(titanic,2,check.NA) #columns
+
+#lapply
+?lapply
+str(titanic)
+titanic[c(1,4,6:7,11)] <- lapply(titanic[c(1,4,6:7,11)], as.factor)
+titanic[c("survived", "sex", "sibsp", "parch", "embarked")] <- lapply(titanic[c("survived", "sex", "sibsp", "parch", "embarked")],as.factor)
+
+packages <- c("plyr", "lubridate")
+lapply(packages, require, character.only=T)
