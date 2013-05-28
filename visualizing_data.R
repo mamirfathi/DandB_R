@@ -140,3 +140,17 @@ ex3
 
 ex4<-ex3+geom_smooth(method='lm',size=1)+labs(title='regression line for each facet')
 ex4
+
+    ##lattice
+?densityplot
+densityplot(~age|sex+as.factor(pclass), #viz formula
+            data=titanic, # data
+            main="density")
+?histogram
+histogram(~age|sex+as.factor(pclass),
+          data=titanic, 
+          main="histogram")
+?xyplot
+xyplot(fare~age|sex+as.factor(pclass), 
+       data=titanic,
+       main="scatter")
