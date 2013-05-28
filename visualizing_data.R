@@ -8,6 +8,8 @@ lapply(packages, require, character.only=T)
 titanic <- read.csv(file='titanic.csv', header=T, as.is=T)
 
 
+    ##base R graphics:
+
 #plot 
 ?plot
 plot(titanic$age, titanic$fare)
@@ -98,8 +100,14 @@ pairs(~mpg+disp+drat+wt,data=mtcars,
       main="Simple Scatterplot Matrix")
 
 
-#ggplot2
-?ggplot          
+    ##ggplot2
+
+#quick plot
+?qplot
+qplot(age,data=titanic,geom="density",fill=as.factor(pclass), alpha=I(.5),
+      main= "age/class density plot",ylab="Density")
+
+#ggplot
 ex <- ggplot(data=titanic)
 
 #histogram
