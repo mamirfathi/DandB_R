@@ -104,8 +104,8 @@ pairs(~mpg+disp+drat+wt,data=mtcars,
 
 #quick plot
 ?qplot
-qplot(age,data=titanic,geom="density",fill=as.factor(pclass), alpha=I(.5),
-      main= "age/class density plot",ylab="Density")
+qplot(age,data=titanic,geom="density",fill=as.factor(sex), alpha=I(.5),
+      main= "age/sex density plot",ylab="Density")
 
 #ggplot
 ex <- ggplot(data=titanic)
