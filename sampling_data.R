@@ -30,3 +30,13 @@ plot(runif(nrow(titanic)))
 ten_per <- runif(nrow(titanic)) <= .1
 ten<-titanic[ten_per,]
 ninety<-titanic[!ten_per,]
+
+#seed
+rnorm(20)
+rnorm(20) #diff random normal 
+
+set.seed(1234)
+rnorm(20)
+
+set.seed(1234)
+rnorm(20)   #same as above
