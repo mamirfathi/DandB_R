@@ -13,4 +13,4 @@ str(titanic)
 #create dummy vars
 titanic_matrix <- as.data.frame(model.matrix(survived~.-1,data=titanic)) #-1 removes the intercept term
 
-?dev.copy2pdf
+titanic_matrix <- as.data.frame(model.matrix(survived~.^2-1,data=titanic))#adds interaction terms
